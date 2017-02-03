@@ -17,6 +17,15 @@ For a detailed documentation visit the following sites:
 - https://docs.docker.com/machine/reference/create/
 - https://docs.docker.com/machine/drivers/generic/
 
+> If the previous command fail it might be required to edit the sudoers file to add permission to the ssh user
+> to run application without the need to input the password.
+> 
+> Type the following command and inside the file add ``sangah ALL=(ALL) NOPASSWD: ALL`` 
+> replacing the user with the right one.
+>
+>       $ sudo visudo
+
+
 
 ## Create an Amazon EC2 Instance
 
