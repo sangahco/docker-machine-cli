@@ -41,3 +41,17 @@ The following command create and prepare an Amazon intance with Docker Engine re
 
 For a detailed documentation visit these sites: 
 - https://docs.docker.com/machine/drivers/aws/
+
+After the AWS Instance is created we need to set the environment inside the machine.
+From the bash type:
+
+    $ docker-machine.exe ssh <MACHINE_NAME>
+    $ sudo usermod -a -G docker ubuntu
+    $ sudo curl -L "https://github.com/docker/compose/releases/download/1.10.0/docker-compose-$(uname -s)-$(uname -m)" \
+      -o /usr/local/bin/docker-compose
+    $ sudo chmod +x /usr/local/bin/docker-compose
+    $ docker-compose --version
+    $ docker login dev.sangah.com:5043
+    $ exit
+
+Done.
