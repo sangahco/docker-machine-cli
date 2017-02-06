@@ -47,6 +47,11 @@ From the bash type:
 
     $ docker-machine.exe ssh <MACHINE_NAME>
     $ sudo usermod -a -G docker ubuntu
+    $ exit
+
+You should log out and log in again
+
+    $ docker-machine.exe ssh <MACHINE_NAME>
     $ sudo curl -L "https://github.com/docker/compose/releases/download/1.10.0/docker-compose-$(uname -s)-$(uname -m)" \
       -o /usr/local/bin/docker-compose
     $ sudo chmod +x /usr/local/bin/docker-compose

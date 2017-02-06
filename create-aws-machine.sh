@@ -1,4 +1,5 @@
 #! /bin/bash
+# More information here https://docs.docker.com/machine/drivers/aws/
 
 export AWS_ACCESS_KEY_ID=$1
 export AWS_SECRET_ACCESS_KEY=$2
