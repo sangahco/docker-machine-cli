@@ -29,15 +29,29 @@ For a detailed documentation visit the following sites:
 
 ## Create an Amazon EC2 Instance
 
+In order to use this service two environment variables have to be available:
+
+- `AWS_ACCESS_KEY_ID`
+- `AWS_SECRET_ACCESS_KEY`
+
+Add the following code at the of the file `.bashrc` located inside the user's home folder as below:
+
+    export AWS_ACCESS_KEY_ID=12345
+    export AWS_SECRET_ACCESS_KEY=45235656232343r
+
+log again with the user or just type:
+
+    $ source ~/.bashrc
+
+
 The following command create and prepare an Amazon intance with Docker Engine ready to use.
 
-    $ ./create-aws-machine.sh ACCESS_KEY SECRET_KEY MACHINE_NAME
+    $ ./create-aws-machine.sh MACHINE_NAME
+
 
 **create-aws-machine.sh** takes the following arguments in sequence:
 
-1. the Amazon user access key provided to you
-2. the Amazon user secret key provided to you
-3. the machine name
+1. The machine name
 
 For a detailed documentation visit these sites: 
 - https://docs.docker.com/machine/drivers/aws/
