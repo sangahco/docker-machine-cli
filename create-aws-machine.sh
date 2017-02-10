@@ -2,16 +2,22 @@
 # More information here https://docs.docker.com/machine/drivers/aws/
 
 MACHINE_NAME=$1
+if [ "$1" == "" ]; then
+    echo "You need to provide a name for the machine (no space, keep simple)"
+    exit 1
+fi
 
-AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION:-ap-northeast-2}
-AWS_INSTANCE_TYPE=${AWS_INSTANCE_TYPE:-t2.micro}
-#AWS_SECURITY_GROUP=
-#AWS_SSH_USER=
-
-MACHINE_IMAGE=ami-a3915acd
+MACHINE_IMAGE=${MACHINE_IMAGE:-ami-a3915acd}
 if [ "$2" != "" ]; then
     MACHINE_IMAGE="$2"
 fi
+
+AWS_INSTANCE_TYPE=${AWS_INSTANCE_TYPE:-t2.micro}
+if [ "$3" != "" ]; then
+    AWS_INSTANCE_TYPE="$3"
+fi
+
+AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION:-ap-northeast-2}
 
 echo "----------------------------------------------"
 echo "Creating instance with the following settings:"
