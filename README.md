@@ -89,4 +89,11 @@ You should log out and log in again
     $ docker login dev.sangah.com:5043
     $ exit
 
+### Common error on creation:
+
+**Error with pre-create check: "There is already a keypair with the name sa-aws2.  Please either remove that keypair or use a different machine name."**
+
+You need to remove the key pair going to `Key Pairs` from the web console, than try again.
+https://ap-northeast-2.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-2#KeyPairs:sort=keyName
+
 Done.
