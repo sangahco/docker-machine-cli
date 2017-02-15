@@ -7,7 +7,7 @@ if [ "$1" == "" ]; then
     exit 1
 fi
 
-MACHINE_IMAGE=${MACHINE_IMAGE:-ami-a3915acd}
+MACHINE_IMAGE=${MACHINE_IMAGE:-ami-09ad7d67}
 if [ "$2" != "" ]; then
     MACHINE_IMAGE="$2"
 fi
