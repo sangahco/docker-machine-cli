@@ -1,6 +1,19 @@
 #! /bin/bash
 # More information here https://docs.docker.com/machine/drivers/aws/
 
+usage() {
+echo "Usage:  $(basename "$0") NAME [AMI] [TYPE]"
+echo
+echo "NAME          The name to give to the instance"
+echo "AMI           The AMI image to clone"
+echo "TYPE          The type of instance: t2.micro, t2.small, t2.medium, t2.large"
+}
+
+if [ $# -eq 0 ]; then
+    usage
+    exit 1
+fi
+
 MACHINE_NAME=$1
 if [ "$1" == "" ]; then
     echo "You need to provide a name for the machine (no space, keep simple)"
