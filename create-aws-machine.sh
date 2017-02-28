@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env sh
 # More information here https://docs.docker.com/machine/drivers/aws/
 
 usage() {

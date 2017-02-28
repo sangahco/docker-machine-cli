@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env sh
 
 # HEADS UP! Make sure to use '*' or a valid hostname for the FDQN prompt
 
