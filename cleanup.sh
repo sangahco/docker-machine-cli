@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 docker rmi -f $(docker images | grep "<none>" | awk "{print \$3}")
 docker ps --filter status=dead --filter status=exited --filter status=created  -aq | xargs docker rm -v
