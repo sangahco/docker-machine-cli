@@ -6,3 +6,6 @@ docker volume rm $(docker volume ls -q)
 
 # remove all images
 docker rmi -f $(docker images | awk "{print \$3}")
+
+# remove all networks
+docker network rm $(docker network ls --format {{.ID}})
