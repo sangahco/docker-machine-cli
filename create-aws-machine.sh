@@ -25,7 +25,7 @@ if [ "$2" != "" ]; then
     MACHINE_IMAGE="$2"
 fi
 
-AWS_INSTANCE_TYPE=${AWS_INSTANCE_TYPE:-t2.micro}
+AWS_INSTANCE_TYPE=${AWS_INSTANCE_TYPE:-t2.small}
 if [ "$3" != "" ]; then
     AWS_INSTANCE_TYPE="$3"
 fi
