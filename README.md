@@ -1,14 +1,22 @@
 ## Create Development Machine (dev.sangah.com)
 
-The following commands create a new machine on your computer provisioning an already existing machine with 
-Docker Engine, most important it will recreate the certificate required to use Docker Engine remotely.
+The following commands create a new *Docker client* on the server provisioning an already existing machine with 
+*Docker Engine*, most important it will recreate the certificates required to use Docker Engine remotely.
 This is a one time operation and **should not** be done by other developers that want to use this Docker hosted machine.
+**Repeating this operation on the same Docker Host machine will invalidate the previous certificates!**
 
-From this folder run:
+A valid ssh certificate need to be generated before creating the docker client.
+You can create the private and public key with the following command:
 
-    $ ./create-dev-machine.sh ssh_key_without_passphrase.key 203.239.21.121 sangah121
+    $ ssh-keygen -t rsa -C "your_email@example.com"
 
-**create-dev-machine.sh** takes the following arguments in sequence:
+Put the public key (*id_rsa.pub*) inside the authorized_keys file in the **host machine**, and use the private key (*id_rsa*) in the following command to create the **docker client**.
+
+Create the Docker client machine with:
+
+    $ ./create-dev-machine.sh id_rsa <DOCKER_HOST> <DOCKER_CLIENT_NAME>
+
+**create-generic-machine.sh** takes the following arguments in sequence:
 
 1. ssh key file
 2. host ip
