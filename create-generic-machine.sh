@@ -8,4 +8,4 @@ docker-machine create --driver generic \
 --generic-ip-address=${HOST_IP} \
 --generic-ssh-key ${SSH_KEY} \
 --generic-ssh-user=sangah \
-dev-${HOST_NAME}
+generic-${HOST_NAME}
