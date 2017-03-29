@@ -12,15 +12,15 @@ You can create the private and public key with the following command:
 
 Put the public key (*id_rsa.pub*) inside the authorized_keys file in the **host machine**, and use the private key (*id_rsa*) in the following command to create the **docker client**.
 
-Create the Docker client machine with:
+Install Docker Engine in the host machine with the following command:
 
-    $ ./create-dev-machine.sh id_rsa <DOCKER_HOST> <DOCKER_CLIENT_NAME>
+    $ ./create-generic-machine.sh id_rsa <DOCKER_HOST> <DOCKER_CLIENT_NAME>
 
 **create-generic-machine.sh** takes the following arguments in sequence:
 
-1. ssh key file
-2. host ip
-3. host name
+1. SSH private key
+2. Host IP
+3. Host Name (without space)
 
 For a detailed documentation visit the following sites:
 - https://docs.docker.com/machine/reference/create/
