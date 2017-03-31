@@ -2,7 +2,7 @@
 # More information here https://docs.docker.com/machine/drivers/aws/
 
 usage() {
-echo "Usage:  $(basename "$0") NAME [AMI] [TYPE]"
+echo "Usage:  $(basename "$0") [NAME] [TYPE] [AMI]"
 echo
 echo "NAME          The name to give to the instance"
 echo "AMI           The AMI image to clone"
