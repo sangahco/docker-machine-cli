@@ -20,14 +20,14 @@ if [ "$1" == "" ]; then
     exit 1
 fi
 
-MACHINE_IMAGE=${MACHINE_IMAGE:-ami-4324f42d}
+AWS_INSTANCE_TYPE=${AWS_INSTANCE_TYPE:-t2.small}
 if [ "$2" != "" ]; then
-    MACHINE_IMAGE="$2"
+    AWS_INSTANCE_TYPE="$2"
 fi
 
-AWS_INSTANCE_TYPE=${AWS_INSTANCE_TYPE:-t2.small}
+MACHINE_IMAGE=${MACHINE_IMAGE:-ami-4324f42d}
 if [ "$3" != "" ]; then
-    AWS_INSTANCE_TYPE="$3"
+    MACHINE_IMAGE="$3"
 fi
 
 AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION:-ap-northeast-2}
