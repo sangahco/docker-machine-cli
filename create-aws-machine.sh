@@ -25,7 +25,7 @@ if [ "$2" != "" ]; then
     AWS_INSTANCE_TYPE="$2"
 fi
 
-MACHINE_IMAGE=${MACHINE_IMAGE:-ami-4324f42d}
+MACHINE_IMAGE=${MACHINE_IMAGE:-ami-0d7fac63}
 if [ "$3" != "" ]; then
     MACHINE_IMAGE="$3"
 fi
