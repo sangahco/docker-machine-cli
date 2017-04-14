@@ -5,10 +5,10 @@ We are going to create a *Docker client* into our development server, provisioni
 This is a one time operation and **should not** be done by other developers that want to use this Docker hosted machine.
 **Repeating this operation on the same Docker Host machine will invalidate the previous certificates!**
 
-###Step One - Create SSH Key Pair
+### Step One - Create SSH Key Pair
 
 A valid ssh certificate need to be generated before creating the docker client.
-You can follow this short tutorial [How To Set Up SSH Keys](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2) 
+You can follow this short tutorial [How To Set Up SSH Keys] on DigitalOcean(https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2) 
 or just keep reading...
 
 Create the private and public key with the following command:
@@ -17,7 +17,7 @@ Create the private and public key with the following command:
 
 Do not put any passphare during the process, *docker-machine* need a key without passphare in order to connect to the machine.
 
-###Step Two - Copy the Public Key
+### Step Two - Copy the Public Key
 
 Copy the public key (*the key ending with .pub*) inside the new **host machine**
 replacing the *ip* and *user* accordingly:
@@ -25,7 +25,7 @@ replacing the *ip* and *user* accordingly:
     $ cat ~/.ssh/id_rsa.pub | ssh user@123.45.56.78 "mkdir -p ~/.ssh && cat >>  ~/.ssh/authorized_keys"
 
 
-###Step Three - Install Docker
+### Step Three - Install Docker
 
 Install Docker Engine in the host machine with the following command:
 
