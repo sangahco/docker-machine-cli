@@ -1,20 +1,35 @@
 ## Create Development Machine (dev.sangah.com)
 
-The following commands create a new *Docker client* on the server provisioning an already existing machine with 
+We are going to create a *Docker client* into our development server, provisioning an already existing machine (*the new server*) with 
 *Docker Engine*, most important it will recreate the certificates required to use Docker Engine remotely.
 This is a one time operation and **should not** be done by other developers that want to use this Docker hosted machine.
 **Repeating this operation on the same Docker Host machine will invalidate the previous certificates!**
 
+###Step One - Create SSH Key Pair
+
 A valid ssh certificate need to be generated before creating the docker client.
-You can create the private and public key with the following command:
+You can follow this short tutorial [How To Set Up SSH Keys](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2) 
+or just keep reading...
 
-    $ ssh-keygen -t rsa -C "your_email@example.com"
+Create the private and public key with the following command:
 
-Put the public key (*id_rsa.pub*) inside the authorized_keys file in the **host machine**, and use the private key (*id_rsa*) in the following command to create the **docker client**.
+    $ ssh-keygen -t rsa
+
+Do not put any passphare during the process, *docker-machine* need a key without passphare in order to connect to the machine.
+
+###Step Two - Copy the Public Key
+
+Copy the public key (*the key ending with .pub*) inside the new **host machine**
+replacing the *ip* and *user* accordingly:
+
+    $ cat ~/.ssh/id_rsa.pub | ssh user@123.45.56.78 "mkdir -p ~/.ssh && cat >>  ~/.ssh/authorized_keys"
+
+
+###Step Three - Install Docker
 
 Install Docker Engine in the host machine with the following command:
 
-    $ ./create-generic-machine.sh id_rsa <DOCKER_HOST> <DOCKER_CLIENT_NAME>
+    $ ./create-generic-machine.sh ~/.ssh/id_rsa <DOCKER_HOST> <DOCKER_CLIENT_NAME>
 
 **create-generic-machine.sh** takes the following arguments in sequence:
 
