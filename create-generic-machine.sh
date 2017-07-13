@@ -1,11 +1,12 @@
-#! /bin/bash
+#!/usr/bin/env bash
 
-export SSH_KEY=$1
-export HOST_IP=$2
-export HOST_NAME=$3
+SSH_KEY=$1
+SSH_USER=$4
+HOST_IP=$2
+HOST_NAME=$3
 
 docker-machine create --driver generic \
 --generic-ip-address=${HOST_IP} \
 --generic-ssh-key ${SSH_KEY} \
---generic-ssh-user=sangah \
+--generic-ssh-user=${SSH_USER:-sangah} \
 generic-${HOST_NAME}
