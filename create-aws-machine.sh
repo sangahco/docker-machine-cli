@@ -2,11 +2,11 @@
 # More information here https://docs.docker.com/machine/drivers/aws/
 
 usage() {
-echo "Usage:  $(basename "$0") [NAME] [TYPE] [AMI]"
-echo
-echo "NAME          The name to give to the instance"
-echo "AMI           The AMI image to clone"
-echo "TYPE          The type of instance: t2.micro, t2.small, t2.medium, t2.large"
+    echo "Usage:  $(basename "$0") [NAME] [TYPE] [AMI]"
+    echo
+    echo "NAME          The name to give to the instance"
+    echo "AMI           The AMI image to clone"
+    echo "TYPE          The type of instance: t2.micro, t2.small, t2.medium, t2.large"
 }
 
 if [ $# -eq 0 ]; then
