@@ -10,7 +10,7 @@ usage(){
 	exit 1
 }
  
-[[ $# -ne 3 ]] && usage
+[[ $# -lt 3 ]] && usage
 
 SSH_KEY=$1
 SSH_USER=$4
