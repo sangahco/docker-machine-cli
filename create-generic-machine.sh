@@ -9,4 +9,4 @@ docker-machine create --driver generic \
 --generic-ip-address=${HOST_IP} \
 --generic-ssh-key ${SSH_KEY} \
 --generic-ssh-user=${SSH_USER:-sangah} \
-generic-${HOST_NAME}
+${HOST_NAME}
