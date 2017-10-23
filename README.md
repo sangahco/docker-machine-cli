@@ -29,7 +29,7 @@ replacing the *ip* and *user* accordingly:
 
 Install Docker Engine in the host machine with the following command:
 
-    $ ./create-generic-machine.sh ~/.ssh/id_rsa <DOCKER_HOST> <DOCKER_CLIENT_NAME>
+    $ ./create-generic-machine.sh ~/.ssh/id_rsa <DOCKER_HOST> <DOCKER_CLIENT_NAME> <SSH USER>
 
 **create-generic-machine.sh** takes the following arguments in sequence:
 
