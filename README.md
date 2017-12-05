@@ -22,7 +22,8 @@ Do not put any passphare during the process, *docker-machine* need a key without
 Copy the public key (*the key ending with .pub*) inside the new **host machine**
 replacing the *ip* and *user* accordingly:
 
-    $ cat ~/.ssh/id_rsa.pub | ssh root@123.45.56.78 "mkdir -p ~/.ssh && cat >>  ~/.ssh/authorized_keys"
+    $ cat ~/.ssh/id_rsa.pub | ssh root@123.45.56.78 \
+    "mkdir -p ~/.ssh && chmod 700 ~/.ssh && cat >>  ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys"
 
 
 ### Step Three - Install Docker
