@@ -132,4 +132,4 @@ Open the crontab with:
     
 And put the following line, the script will run every synday at 2 o'clock:
 
-    0 2 * * 1 wget -O - https://raw.githubusercontent.com/sangahco/docker-machine-cli/master/cleanup.sh | bash
+    0 2 * * 0 wget -O - https://raw.githubusercontent.com/sangahco/docker-machine-cli/master/cleanup.sh | bash
