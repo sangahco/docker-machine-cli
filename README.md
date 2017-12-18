@@ -121,3 +121,15 @@ You need to remove the key pair going to `Key Pairs` from the web console, than 
 https://ap-northeast-2.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-2#KeyPairs:sort=keyName
 
 Done.
+
+## Schedule cleanup
+
+We can schedule the docker cleanup without downloading the entire repository.
+
+Open the crontab with:
+
+    $ crontab -e
+    
+And put the following line, the script will run every synday at 2 o'clock:
+
+    0 2 * * 1 wget -O - https://raw.githubusercontent.com/sangahco/docker-machine-cli/master/cleanup.sh | bash
