@@ -25,7 +25,7 @@ if [ "$2" != "" ]; then
     AWS_INSTANCE_TYPE="$2"
 fi
 
-MACHINE_IMAGE=${MACHINE_IMAGE:-ami-0d7fac63}
+MACHINE_IMAGE=${MACHINE_IMAGE:-ami-022e5703a33e51603}
 if [ "$3" != "" ]; then
     MACHINE_IMAGE="$3"
 fi
@@ -47,4 +47,5 @@ docker-machine create \
 --amazonec2-secret-key ${AWS_SECRET_ACCESS_KEY} \
 --amazonec2-ami "${MACHINE_IMAGE}" \
 --amazonec2-instance-type ${AWS_INSTANCE_TYPE} \
+--amazonec2-root-size 50 \
 ${MACHINE_NAME}
