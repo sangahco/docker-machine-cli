@@ -6,7 +6,7 @@ usage() {
     echo
     echo "NAME          The name to give to the instance"
     echo "AMI           The AMI image to clone"
-    echo "TYPE          The type of instance: t2.micro, t2.small, t2.medium, t2.large"
+    echo "TYPE          The type of instance: t3.micro, t3.small, t3.medium, t3.large"
 }
 
 if [ $# -eq 0 ]; then
@@ -20,12 +20,12 @@ if [ "$1" == "" ]; then
     exit 1
 fi
 
-AWS_INSTANCE_TYPE=${AWS_INSTANCE_TYPE:-t2.small}
+AWS_INSTANCE_TYPE=${AWS_INSTANCE_TYPE:-t3.small}
 if [ "$2" != "" ]; then
     AWS_INSTANCE_TYPE="$2"
 fi
 
-MACHINE_IMAGE=${MACHINE_IMAGE:-ami-09a4f551254674374}
+MACHINE_IMAGE=${MACHINE_IMAGE:-ami-01ab73f5311a53a55}
 if [ "$3" != "" ]; then
     MACHINE_IMAGE="$3"
 fi
